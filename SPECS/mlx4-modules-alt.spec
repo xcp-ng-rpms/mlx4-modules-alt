@@ -8,7 +8,10 @@
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: mlx4-modules-alt
 Version: 4.9_7.1.0.0
-Release: 1%{?dist}
+Release: 2%{?dist}
+# Built against new kABI after cip rebase
+Requires: xcpng-kernel-kabi = 4.19.325-cip134+
+
 License: GPLv2
 
 # Extracted from https://network.nvidia.com/products/ethernet-drivers/linux/mlnx_en/
@@ -71,6 +74,9 @@ find %{buildroot}/lib/modules/%{kernel_version} -name "*.ko" -type f | xargs chm
 %exclude /lib/modules/%{kernel_version}/%{module_dir}/mlx_compat.ko
 
 %changelog
+* Mon Aug 31 2026 Quentin Casasnovas <quentin.casasnovas@vates.tech> - 4.9_7.1.0.0-2
+- Rebuild for kernel v4.19.325-cip134
+
 * Mon Jun 17 2024 Gael Duperrey <gduperrey@vates.tech> - 4.9_7.1.0.0-1
 - Initial package
 - Require mlx_compat virtual provides instead of shipping mlx_compat.ko
