@@ -8,14 +8,14 @@
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: mlx4-modules-alt
 Version: 4.9_7.1.0.0
-Release: 1%{?dist}
+Release: 1.0.kernelpreview.1%{?dist}
 License: GPLv2
 
 # Extracted from https://network.nvidia.com/products/ethernet-drivers/linux/mlnx_en/
 Source0: mlx4-modules-alt-4.9_7.1.0.0.tar.gz
 
 BuildRequires: gcc
-BuildRequires: kernel-devel
+BuildRequires: kernel-devel >= 4.19.325-cip137.8.0.46.16
 Provides: vendor-driver
 Requires: kernel-uname-r = %{kernel_version}
 Requires(post): /usr/sbin/depmod
@@ -71,6 +71,9 @@ find %{buildroot}/lib/modules/%{kernel_version} -name "*.ko" -type f | xargs chm
 %exclude /lib/modules/%{kernel_version}/%{module_dir}/mlx_compat.ko
 
 %changelog
+* Mon Nov 16 2026 Quentin Casasnovas <quentin.casasnovas@vates.tech> - 4.9_7.1.0.0-1.0.kernelpreview.1
+- Rebuild for kernel v4.19.325-cip137
+
 * Mon Jun 17 2024 Gael Duperrey <gduperrey@vates.tech> - 4.9_7.1.0.0-1
 - Initial package
 - Require mlx_compat virtual provides instead of shipping mlx_compat.ko
