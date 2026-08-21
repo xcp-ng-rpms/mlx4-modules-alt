@@ -8,7 +8,10 @@
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: mlx4-modules-alt
 Version: 4.9_7.1.0.0
-Release: 1%{?dist}
+Release: 2%{?dist}
+# Built against new kABI after cip rebase
+Requires: xcpng-kernel-kabi = 4.19.325-cip134+
+
 License: GPLv2
 
 # Extracted from https://network.nvidia.com/products/ethernet-drivers/linux/mlnx_en/
