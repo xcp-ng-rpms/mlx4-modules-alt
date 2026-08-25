@@ -8,7 +8,7 @@
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: mlx4-modules-alt
 Version: 4.9_7.1.0.0
-Release: 2%{?dist}
+Release: 2.0.cip134.1%{?dist}
 # Built against new kABI after cip rebase
 Requires: xcpng-kernel-kabi = 4.19.325-cip134+
 
