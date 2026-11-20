@@ -8,7 +8,7 @@
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: mlx4-modules-alt
 Version: 4.9_7.1.0.0
-Release: 1.0.kernelpreview.1%{?dist}
+Release: 1.0.kernelpreview.1.0.testv0.1%{?dist}
 License: GPLv2
 
 # Extracted from https://network.nvidia.com/products/ethernet-drivers/linux/mlnx_en/
